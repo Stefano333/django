@@ -50,6 +50,10 @@ class ModelAdminTests(TestCase):
         ma = ModelAdmin(Band, self.site)
         self.assertEqual(str(ma), 'modeladmin.ModelAdmin')
 
+    def test_modeladmin_repr(self):
+        ma = ModelAdmin(Band, self.site)
+        self.assertEqual(repr(ma), '<ModelAdmin model_app=modeladmin, model_class_name=Band, admin_site=admin>')
+
     # form/fields/fieldsets interaction ##############################
 
     def test_default_fields(self):
